@@ -114,6 +114,11 @@
     .link--main:hover { background: var(--orange-2); border-color: var(--orange-2); box-shadow: 0 14px 40px -12px rgba(240,140,16,.7); }
     .link--main:hover .go { color: #1c1b1c; }
 
+    /* Google review: the stars in the sign's orange */
+    .link--review .stars { display: flex; gap: 2px; margin-top: 3px; color: var(--orange); }
+    .link--review .stars svg { width: 15px; height: 15px; }
+    .link--review .ico { background: rgba(240,140,16,.14); }
+
     /* quads / bikes cards */
     .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
     .feature { position: relative; display: block; aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); isolation: isolate; }
@@ -163,7 +168,7 @@
       .side .social { margin-bottom: 0; }
       .main { padding-top: 66px; }
       .links { grid-template-columns: 1fr 1fr; gap: 14px; }
-      .links > .duo, .links > .link--main { grid-column: 1 / -1; }
+      .links > .duo, .links > .link--main, .links > .link--review { grid-column: 1 / -1; }
       .txt small { white-space: normal; overflow-wrap: anywhere; }
       .duo .feature { aspect-ratio: 16 / 12; }
       .foot { text-align: start; }
@@ -187,6 +192,7 @@
     <symbol id="i-qr" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z"/><path fill="currentColor" d="M14 14h3v3h-3zM17 17h3v3h-3zM14 18h2v2h-2zM18 14h2v2h-2z"/></symbol>
     <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="6" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="19" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4"/></symbol>
     <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.8l2.8 5.7 6.3.9-4.55 4.45 1.07 6.27L12 17.15l-5.62 2.97 1.07-6.27L2.9 9.4l6.3-.9z"/></symbol>
     <symbol id="i-shuffle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 7h3.5c2 0 3.3 1 4.4 2.6l2.2 3.8c1 1.7 2.4 2.6 4.4 2.6H21M3 17h3.5c1.4 0 2.5-.5 3.4-1.4M14.1 8.4c.9-.9 2-1.4 3.4-1.4H21M18 4l3 3-3 3M18 14l3 3-3 3"/></symbol>
   </defs>
 </svg>
@@ -249,6 +255,12 @@
       </a>
     </div>
 
+    <a class="link link--review in" style="--i:6" href="https://search.google.com/local/writereview?placeid=ChIJ_b7l4GN9fg0RhHVGglnafo8" target="_blank" rel="noopener">
+      <span class="ico"><svg aria-hidden="true"><use href="#i-star"/></svg></span>
+      <span class="txt"><b data-t="review">Laisser un avis</b><small data-t="reviewSub">Notez-nous sur Google</small>
+        <span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span></span>
+      <svg class="go flip" aria-hidden="true"><use href="#i-go"/></svg>
+    </a>
     <a class="link in" style="--i:6" href="tel:0783782736">
       <span class="ico"><svg aria-hidden="true"><use href="#i-phone"/></svg></span>
       <span class="txt"><b data-t="call">Appeler</b><small class="nums">0783 78 27 36</small></span>
@@ -309,7 +321,7 @@
     c1: 'عند حمزة', c1s: 'المحل في كاناستيل', c2: 'كواد VMS', c2s: 'جاهزة للنزهة', c3: 'الواجهة', c3s: 'كواد، دراجات وسكوتر',
     c4: 'الأسطول', c4s: 'كواد أمام الباب', c5: 'نزهات', c5s: 'الانطلاق من المحل', c6: 'على الطريق', c6s: 'وحدك، مع شريك أو مع الأصدقاء',
     book: 'احجز عبر واتساب', bookSub: 'كواد أو دراجة، برسالة واحدة', quadTag: 'كراء', quads: 'كواد', quadsSub: 'نزهة في كاناستيل',
-    bikes: 'دراجات', bikesSub: 'بالساعة أو باليوم', call: 'اتصل', route: 'الاتجاهات', addr: 'كاناستيل، وهران',
+    bikes: 'دراجات', bikesSub: 'بالساعة أو باليوم', review: 'اترك تقييماً', reviewSub: 'قيّمنا على Google', call: 'اتصل', route: 'الاتجاهات', addr: 'كاناستيل، وهران',
     save: 'حفظ جهة الاتصال', qr: 'رمز QR', share: 'مشاركة', qrSub: 'امسح الرمز لفتح هذه الصفحة', foot: 'كراء الكواد والدراجات في كاناستيل',
   };
   const MSG = {
